@@ -4,27 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Created basic project structure and classes.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AuthenticationDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/IDummyData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/Util.java" afterDir="false" />
+    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Finished Half the View">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/JDBC/ConnectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DummyData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DummyData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ManagerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ManagerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ServicerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ServicerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Servicer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Servicer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +73,9 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="model" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="JDBC" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -108,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682091495184</updated>
       <workItem from="1682091497073" duration="6925000" />
-      <workItem from="1682102582778" duration="7678000" />
+      <workItem from="1682102582778" duration="15919000" />
     </task>
     <task id="LOCAL-00001" summary="Created basic project structure and classes.">
       <created>1682102722575</created>
@@ -117,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682102722575</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finished Half the View">
+      <created>1682110552717</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682110552717</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created basic project structure and classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created basic project structure and classes." />
+    <MESSAGE value="Finished Half the View" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Half the View" />
   </component>
 </project>

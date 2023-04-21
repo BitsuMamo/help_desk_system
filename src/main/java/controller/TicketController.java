@@ -4,6 +4,7 @@ import dao.IDao;
 import dao.IDummyData;
 import dao.TicketDao;
 import model.Customer;
+import model.Servicer;
 import model.Ticket;
 
 import java.util.List;
@@ -35,8 +36,17 @@ public class TicketController implements ICommon<Ticket>{
         return ticketDao.getByCustomer(customer);
     }
 
+    public List<Ticket> getByServicer(Servicer servicer){
+        return ticketDao.getByServicer(servicer);
+    }
+
     public void updateStatus(Integer id){
         Optional<Ticket> ticket = ticketDao.getById(id);
         ticket.get().setFixed(true);
     }
+
+    public void updateServicer(Integer id, Servicer servicer){
+        ticketDao.getById(id).get().setServicer(servicer);
+    }
+
 }

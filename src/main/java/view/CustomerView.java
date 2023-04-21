@@ -24,25 +24,13 @@ public class CustomerView {
             System.out.println("5. Exit");
             input = keyboard.nextInt();
 
-            switch (input){
-                case 1:
-                    createTicket();
-                    break;
-                case 2:
-                    viewActiveTickets();
-                    break;
-                case 3:
-                    deleteActiveTicket();
-                    break;
-                case 4:
-                    viewResolvedTickets();
-                    break;
-                case 5:
-                    new AuthenticationView().showAuthScreen();
-                    break;
-                default:
-                    System.out.println("Wrong Input!");
-                    break;
+            switch (input) {
+                case 1 -> createTicket();
+                case 2 -> viewActiveTickets();
+                case 3 -> deleteActiveTicket();
+                case 4 -> viewResolvedTickets();
+                case 5 -> new AuthenticationView().showAuthScreen();
+                default -> System.out.println("Wrong Input!");
             }
         }while(input != 5);
 

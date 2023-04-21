@@ -10,4 +10,12 @@ public class Servicer extends User {
     String getType() {
         return "SERVICER";
     }
+
+    @Override
+    public String toString(){
+        return String.format(
+                "|%-20s|%20s|",
+                getId(), getName()
+        );
+    }
 }

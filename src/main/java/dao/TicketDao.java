@@ -1,6 +1,7 @@
 package dao;
 
 import model.Customer;
+import model.Servicer;
 import model.Ticket;
 
 import java.util.List;
@@ -33,6 +34,16 @@ public class TicketDao implements IDao<Ticket>, IDummyData{
     public List<Ticket> getByCustomer(Customer customer){
         return dm.ticketData.values().stream()
                 .filter((ticket) -> ticket.getCustomer().equals(customer))
+                .toList();
+    }
+
+    public List<Ticket> getByServicer(Servicer servicer){
+        return dm.ticketData.values().stream()
+                .filter(ticket -> {
+                    if(ticket.getServicer() != null)
+                        return ticket.getServicer().equals(servicer);
+                    return false;
+                })
                 .toList();
     }
 }

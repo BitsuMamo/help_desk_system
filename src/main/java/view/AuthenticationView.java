@@ -3,6 +3,7 @@ package view;
 import controller.AuthenticationController;
 import model.Customer;
 import model.Manager;
+import model.Servicer;
 import model.User;
 
 import java.util.Optional;
@@ -27,7 +28,7 @@ public class AuthenticationView {
         switch (user.get().getUserType()) {
             case "MANAGER" -> new ManagerView((Manager) user.get()).showManagerView();
             case "CUSTOMER" -> new CustomerView((Customer) user.get()).showCustomerView();
-            case "SERVICER" -> System.out.println("serv");
+            case "SERVICER" -> new ServicerView((Servicer) user.get()).showServicerView();
         }
 
 
