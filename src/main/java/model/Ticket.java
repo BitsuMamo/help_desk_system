@@ -9,14 +9,14 @@ import java.time.LocalDate;
 @Data
 public class Ticket {
 
-    private int id;
+    private Integer id;
     private LocalDate createdAt;
     private String title, description;
     private Customer customer;
     private Servicer servicer;
     private boolean isFixed;
 
-    public Ticket(int id, String title, String description, Customer customer) {
+    public Ticket(Integer id, String title, String description, Customer customer) {
         this.id = id;
         this.createdAt = LocalDate.now();
         this.title = title;
