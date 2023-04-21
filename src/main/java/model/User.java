@@ -1,0 +1,18 @@
+package model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.SuperBuilder;
+
+@Data
+@AllArgsConstructor
+public abstract class User {
+    private Integer id;
+    private String name;
+    private String userName;
+    private String password;
+    private String userType;
+
+    abstract String getType();
+}
