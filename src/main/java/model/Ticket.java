@@ -25,4 +25,12 @@ public class Ticket {
         this.servicer = null;
         this.isFixed = false;
     }
+
+    @Override
+    public String toString(){
+        return String.format(
+                "|%-20d|%20s|%20s|%20s|%-20d|%-20d|",
+                id, createdAt, title, description, customer.getId(), servicer == null ? -1 : servicer.getId()
+        );
+    }
 }

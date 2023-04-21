@@ -1,14 +1,16 @@
 package controller;
 
 import dao.IDao;
+import dao.IDummyData;
 import dao.TicketDao;
+import model.Customer;
 import model.Ticket;
 
 import java.util.List;
 import java.util.Optional;
 
-public class TicketController implements ICommon<Ticket> {
-    IDao<Ticket> ticketDao = new TicketDao();
+public class TicketController implements ICommon<Ticket>{
+    TicketDao ticketDao = new TicketDao();
     @Override
     public List<Ticket> getAll() {
         return ticketDao.getAll();
@@ -27,5 +29,14 @@ public class TicketController implements ICommon<Ticket> {
     @Override
     public Ticket delete(Integer id) {
         return ticketDao.delete(id);
+    }
+
+    public List<Ticket> getByCustomer(Customer customer){
+        return ticketDao.getByCustomer(customer);
+    }
+
+    public void updateStatus(Integer id){
+        Optional<Ticket> ticket = ticketDao.getById(id);
+        ticket.get().setFixed(true);
     }
 }

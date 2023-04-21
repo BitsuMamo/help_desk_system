@@ -29,4 +29,5 @@ public class CustomerController implements ICommon<Customer> {
     public Customer delete(Integer id) {
         return customerDao.delete(id);
     }
+
 }

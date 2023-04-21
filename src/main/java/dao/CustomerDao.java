@@ -5,8 +5,7 @@ import model.Customer;
 import java.util.List;
 import java.util.Optional;
 
-public class CustomerDao implements IDao<Customer> {
-    DummyData dm = new DummyData();
+public class CustomerDao implements IDao<Customer>, IDummyData {
     @Override
     public List<Customer> getAll() {
         return dm.usersData
@@ -29,8 +28,8 @@ public class CustomerDao implements IDao<Customer> {
 
     @Override
     public Customer delete(Integer id) {
-        Customer cust = (Customer) dm.usersData.get(id);
+        Customer user = (Customer) dm.usersData.get(id);
         dm.usersData.remove(id);
-        return cust;
+        return user;
     }
 }

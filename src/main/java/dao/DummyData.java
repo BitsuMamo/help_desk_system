@@ -19,7 +19,7 @@ public class DummyData {
     HashMap<Integer, Ticket> ticketData = new HashMap<>();
 
 
-    DummyData(){
+     DummyData(){
         users = List.of(
                 new Customer(1, "Tanvir", "tanvir", "hello"),
                 new Customer(2, "Suraphel", "sura", "123"),
