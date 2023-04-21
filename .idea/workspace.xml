@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Finished Half the View">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/JDBC/ConnectManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Servicer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Servicer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Util.java" afterDir="false" />
-    </list>
+    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Started db integration with sqllite." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682091495184</updated>
       <workItem from="1682091497073" duration="6925000" />
-      <workItem from="1682102582778" duration="15919000" />
+      <workItem from="1682102582778" duration="16243000" />
     </task>
     <task id="LOCAL-00001" summary="Created basic project structure and classes.">
       <created>1682102722575</created>
@@ -122,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682110552717</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Started db integration with sqllite.">
+      <created>1682118682673</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682118682673</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +122,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created basic project structure and classes." />
     <MESSAGE value="Finished Half the View" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Half the View" />
+    <MESSAGE value="Started db integration with sqllite." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started db integration with sqllite." />
   </component>
 </project>
