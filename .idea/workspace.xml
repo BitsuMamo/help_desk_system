@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Started db integration with sqllite." />
+    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="added sqlite file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JDBC/ConnectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JDBC/ConnectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AuthenticationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthenticationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ManagerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ManagerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ServicerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ServicerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Util.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +48,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "openjdk-20",
     "last_opened_file_path": "C:/Users/Bitsu/.m2/repository/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar",
@@ -50,6 +65,9 @@
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "sqlite"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "SQLite"
     ]
   }
 }]]></component>
@@ -90,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682091495184</updated>
       <workItem from="1682091497073" duration="6925000" />
-      <workItem from="1682102582778" duration="16243000" />
+      <workItem from="1682102582778" duration="24190000" />
     </task>
     <task id="LOCAL-00001" summary="Created basic project structure and classes.">
       <created>1682102722575</created>
@@ -113,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682118682673</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added sqlite file">
+      <created>1682119137482</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682119137482</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +148,7 @@
     <MESSAGE value="Created basic project structure and classes." />
     <MESSAGE value="Finished Half the View" />
     <MESSAGE value="Started db integration with sqllite." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started db integration with sqllite." />
+    <MESSAGE value="added sqlite file" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sqlite file" />
   </component>
 </project>

@@ -12,86 +12,97 @@ import java.util.List;
 import java.util.Optional;
 
 public class CustomerDao implements IDao<Customer>, IDummyData {
+
+    private final Connection conn;
+    public CustomerDao(){
+        conn = new ConnectManager().getConnection();
+    }
+
     @Override
     public List<Customer> getAll() {
-        List<Customer> returnValue = new ArrayList<>();
+        List<Customer> returnCustomers = new ArrayList<>();
 
         String query = "SELECT * FROM 'User' WHERE type = 'CUSTOMER'";
 
-        try(Connection conn = (new ConnectManager()).getConnection()) {
-            PreparedStatement stat = conn.prepareStatement(query);
+        try(PreparedStatement statement = conn.prepareStatement(query)){
 
-            try {
-
-                ResultSet rs = stat.executeQuery();
-                while(rs.next()){
-                    returnValue.add(populateCustomer(rs));
-                }
-            }catch (SQLException e){
-                System.out.println(e.getErrorCode() + " " + e.getMessage());
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                returnCustomers.add(new Customer(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("userName"),
+                        rs.getString("password")
+                ));
             }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        }catch (SQLException e){
+            System.out.println(e.getErrorCode() + " " + e.getMessage());
         }
 
-        return returnValue;
-
-    }
-
-    private Customer populateCustomer(ResultSet rs) throws SQLException{
-        Integer id = null;
-        String name = null;
-        String userName = null;
-        String password = null;
-        if(rs.next()){
-            id = rs.getInt("id");
-            name = rs.getString("name").trim();
-            userName = rs.getString("userName").trim();
-            password = rs.getString("password").trim();
-        }
-
-        return new Customer(id, name, userName, password);
+        return returnCustomers;
     }
 
     @Override
     public Optional<Customer> getById(Integer id) {
-        Customer returnValue = null;
+        Customer returnCustomer = null;
 
         String query = "SELECT * FROM 'User' WHERE id = ?";
 
-        try(Connection conn = (new ConnectManager()).getConnection()) {
-            PreparedStatement stat = conn.prepareStatement(query);
-            stat.setString(1, String.valueOf(id));
+        try(PreparedStatement statement = conn.prepareStatement(query)){
+            statement.setInt(1, id);
 
-            try {
+            ResultSet rs = statement.executeQuery();
 
-                ResultSet rs = stat.executeQuery();
-                while(rs.next()){
-                    returnValue = populateCustomer(rs);
-                }
-            }catch (SQLException e){
-                System.out.println(e.getErrorCode() + " " + e.getMessage());
+            if(!rs.next()){
+                return Optional.empty();
             }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            returnCustomer = new Customer(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("userName"),
+                    rs.getString("password")
+            );
+        }catch (SQLException e){
+            System.out.println(e.getErrorCode() + " " + e.getMessage());
         }
 
-
-        return Optional.ofNullable(returnValue);
+        return Optional.ofNullable(returnCustomer);
     }
 
     @Override
     public Customer create(Customer data) {
-        dm.usersData.put(data.getId(), data);
-        return (Customer) dm.usersData.get(data.getId());
+
+
+        String query = "INSERT INTO User (name, userName, password, type) VALUES (?, ?, ?, ?)";
+
+        try(PreparedStatement statement = conn.prepareStatement(query)){
+            statement.setString(1, data.getName());
+            statement.setString(2, data.getUserName());
+            statement.setString(3, data.getPassword());
+            statement.setString(4, data.getUserType());
+
+            statement.executeUpdate();
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        return getById(data.getId()).orElse(null);
     }
 
     @Override
     public Customer delete(Integer id) {
-        Customer user = (Customer) dm.usersData.get(id);
-        dm.usersData.remove(id);
-        return user;
+        Customer customer = getById(id).orElse(null);
+        String query = "DELETE FROM User WHERE id = ?";
+
+        try(PreparedStatement statement = conn.prepareStatement(query)) {
+            statement.setInt(1, id);
+
+            statement.executeUpdate();
+
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+        return customer;
     }
 }

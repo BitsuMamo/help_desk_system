@@ -1,37 +1,90 @@
 package dao;
 
+import JDBC.ConnectManager;
 import model.Customer;
 import model.Manager;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
 public class
 ManagerDao implements IDao<Manager>, IDummyData {
+    private Connection conn;
+
+    public ManagerDao(){
+        conn = new ConnectManager().getConnection();
+    }
     @Override
     public List<Manager> getAll() {
-        return dm.usersData
-                .values().stream()
-                .filter(user -> user.getUserType().equals("MANAGER"))
-                .map(user -> (Manager)user)
-                .toList();
+        return null;
     }
 
     @Override
-    public Optional<Manager> getById(Integer id) {
-        return Optional.of((Manager) dm.usersData.get(id));
+    public Optional<Manager> getById(Integer id)
+    {
+        Manager returnManger = null;
+
+        String query = "SELECT * FROM 'User' WHERE id = ?";
+
+        try(PreparedStatement statement = conn.prepareStatement(query)){
+            statement.setInt(1, id);
+
+            ResultSet rs = statement.executeQuery();
+
+            if(!rs.next()){
+                return Optional.empty();
+            }
+            returnManger = new Manager(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("userName"),
+                    rs.getString("password")
+            );
+        }catch (SQLException e){
+            System.out.println(e.getErrorCode() + " " + e.getMessage());
+        }
+
+        return Optional.ofNullable(returnManger);
     }
 
     @Override
     public Manager create(Manager data) {
-        dm.usersData.put(data.getId(), data);
-        return (Manager) dm.usersData.get(data.getId());
+        String query = "INSERT INTO User (name, userName, password, type) VALUES (?, ?, ?, ?)";
+
+        try(PreparedStatement statement = conn.prepareStatement(query)){
+            statement.setString(1, data.getName());
+            statement.setString(2, data.getUserName());
+            statement.setString(3, data.getPassword());
+            statement.setString(4, data.getUserType());
+
+            statement.executeUpdate();
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        return getById(data.getId()).orElse(null);
     }
 
     @Override
     public Manager delete(Integer id) {
-        Manager user = (Manager) dm.usersData.get(id);
-        dm.usersData.remove(id);
-        return user;
+        Manager manager = getById(id).orElse(null);
+
+        String query = "DELETE FROM User WHERE id = ?";
+
+        try(PreparedStatement statement = conn.prepareStatement(query)) {
+            statement.setInt(1, id);
+
+            statement.executeUpdate();
+
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+
+        return manager;
     }
 }

@@ -20,23 +20,32 @@ public class ServicerView {
     public void showServicerView(){
         int input;
         do{
-            System.out.println("1. See Tickets");
-            System.out.println("2. Resolve Ticket");
-            System.out.println("3. Exit");
+            System.out.println("1. Show Active Tickets");
+            System.out.println("2. Show Ticket");
+            System.out.println("3. Resolve Ticket");
+            System.out.println("4. Exit");
             input = keyboard.nextInt();
 
             switch (input) {
-                case 1 -> showTickets();
-                case 2 -> resolveTicket();
-                case 3 -> new AuthenticationView().showAuthScreen();
+                case 1 -> showActiveTickets();
+                case 2 -> showTickets();
+                case 3 -> resolveTicket();
+                case 4 -> new AuthenticationView().showAuthScreen();
             }
 
 
         }while (input != 3);
     }
 
+    private void showActiveTickets() {
+        List<Ticket> tickets = ticketController.getByServicer(servicer).stream()
+                .filter(ticket -> !ticket.isFixed())
+                .toList();
+        Util.printTickets(tickets);
+    }
+
     private void resolveTicket() {
-        showTickets();
+        showActiveTickets();
         System.out.println("Enter ID: ");
         int id = keyboard.nextInt();
         ticketController.updateStatus(id);

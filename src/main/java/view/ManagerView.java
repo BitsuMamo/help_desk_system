@@ -67,7 +67,7 @@ public class ManagerView {
         System.out.println("Enter Ticket ID: ");
         int id = keyboard.nextInt();
 
-        Util.printServicers(servicerController.getAll());
+        Util.printUser(servicerController.getAll());
         System.out.println("Enter Servicer ID");
         int id2 = keyboard.nextInt();
 

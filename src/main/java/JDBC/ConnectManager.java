@@ -1,13 +1,12 @@
 package JDBC;
 
 import java.io.Closeable;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Optional;
 
-public class ConnectManager implements Closeable {
+public class ConnectManager{
 	
 //	private static final String DB_URL 
 //		= "jdbc:derby://localhost:1527/MPP_DB;create=true";
@@ -41,17 +40,8 @@ public class ConnectManager implements Closeable {
 	}
 	
 	public void closeConnection(Connection con)  throws SQLException {
-
-	}
-
-	@Override
-	public void close() throws IOException {
-		if(conn != null) {
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				throw new RuntimeException(e);
-			}
+		if(con != null && !con.isClosed()) {
+			con.close();
 		}
 	}
 }

@@ -41,12 +41,11 @@ public class TicketController implements ICommon<Ticket>{
     }
 
     public void updateStatus(Integer id){
-        Optional<Ticket> ticket = ticketDao.getById(id);
-        ticket.get().setFixed(true);
+        ticketDao.resolveTicket(id);
     }
 
     public void updateServicer(Integer id, Servicer servicer){
-        ticketDao.getById(id).get().setServicer(servicer);
+        ticketDao.addServicer(id, servicer.getId());
     }
 
 }

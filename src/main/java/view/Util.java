@@ -2,6 +2,7 @@ package view;
 
 import model.Servicer;
 import model.Ticket;
+import model.User;
 
 import java.util.List;
 
@@ -24,34 +25,34 @@ public class Util {
     }
 
     public static void printTickets(List<Ticket> tickets){
-        System.out.println(createSeparator("-", "+", "+", 120 + 6));
+        System.out.println(createSeparator("-", "+", "+", 300 + 6));
         System.out.printf(
-                "|%-20s|%20s|%20s|%20s|%-20s|%-20s|%n",
-                "ID", "Created At", "Title", "Desc", "Cust ID", "Servicer ID"
+                "|%-50s|%50s|%50s|%50s|%50s|%50s|%n",
+                "ID", "Created At", "Title", "Desc", "Cust", "Servicer"
         );
 
 
         tickets.forEach((x) -> {
-            System.out.println(createSeparatorInternal("-", "+", 20, 6));
+            System.out.println(createSeparatorInternal("-", "+", 50, 6));
             System.out.println(x);
         });
 
-        System.out.println(createSeparator("-", "+", "+", 120 + 6));
+        System.out.println(createSeparator("-", "+", "+", 300 + 6));
 
     }
 
-    public static void printServicers(List<Servicer> servicers){
-        System.out.println(createSeparator("-", "+", "+", 43));
+    public static void printUser(List<? extends User> users){
+        System.out.println(createSeparator("-", "+", "+", 42));
         System.out.printf(
                 "|%-20s|%20s|%n",
                 "ID", "Name"
         );
 
-        servicers.forEach((x) -> {
+        users.forEach((x) -> {
             System.out.println(createSeparatorInternal("-", "+", 20, 2));
             System.out.println(x);
         });
 
-        System.out.println(createSeparator("-", "+", "+", 43));
+        System.out.println(createSeparator("-", "+", "+", 42));
     }
 }

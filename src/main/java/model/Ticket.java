@@ -16,21 +16,27 @@ public class Ticket {
     private Servicer servicer;
     private boolean isFixed;
 
-    public Ticket(Integer id, String title, String description, Customer customer) {
+    public Ticket(Integer id, String title, String description, Customer customer, Servicer servicer, boolean isFixed) {
         this.id = id;
         this.createdAt = LocalDate.now();
         this.title = title;
         this.description = description;
         this.customer = customer;
-        this.servicer = null;
-        this.isFixed = false;
+        this.servicer = servicer;
+        this.isFixed = isFixed;
+    }
+    public Ticket(Integer id, LocalDate createdAt, String title, String description, Customer customer, Servicer servicer, boolean isFixed) {
+        this(id, title, description, customer, servicer, isFixed);
+        this.createdAt = createdAt;
+    }
+    public Ticket(Integer id, String title, String description, Customer customer) {
     }
 
     @Override
     public String toString(){
         return String.format(
-                "|%-20d|%20s|%20s|%20s|%-20d|%-20d|",
-                id, createdAt, title, description, customer.getId(), servicer == null ? -1 : servicer.getId()
+                "|%-50d|%50s|%50s|%50s|%50s|%50s|",
+                id, createdAt, title, description, customer.getName(), servicer == null ? "" : servicer.getName()
         );
     }
 }
