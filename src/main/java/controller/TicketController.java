@@ -1,7 +1,5 @@
 package controller;
 
-import dao.IDao;
-import dao.IDummyData;
 import dao.TicketDao;
 import model.Customer;
 import model.Servicer;

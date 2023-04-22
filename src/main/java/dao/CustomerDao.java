@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class CustomerDao implements IDao<Customer>, IDummyData {
+public class CustomerDao implements IDao<Customer>{
 
     private final Connection conn;
     public CustomerDao(){

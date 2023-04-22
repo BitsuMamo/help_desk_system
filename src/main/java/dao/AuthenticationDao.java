@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
-public class AuthenticationDao implements IDummyData {
+public class AuthenticationDao{
 
     private final Connection conn;
 

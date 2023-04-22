@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class
-ManagerDao implements IDao<Manager>, IDummyData {
+ManagerDao implements IDao<Manager>{
     private Connection conn;
 
     public ManagerDao(){

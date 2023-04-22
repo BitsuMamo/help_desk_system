@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class TicketDao implements IDao<Ticket>, IDummyData{
+public class TicketDao implements IDao<Ticket>{
     private final Connection conn;
     private final CustomerDao customerDao;
     private final ServicerDao servicerDao;
