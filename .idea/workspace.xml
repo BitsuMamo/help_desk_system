@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="db">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" afterDir="false" />
+    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Finishing touches to UI">
       <change beforePath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682184497951</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Finishing touches to UI">
+      <created>1682200110573</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682200110573</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +162,7 @@
     <MESSAGE value="added sqlite file" />
     <MESSAGE value="Finished up CLI and functionalities" />
     <MESSAGE value="db" />
-    <option name="LAST_COMMIT_MESSAGE" value="db" />
+    <MESSAGE value="Finishing touches to UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing touches to UI" />
   </component>
 </project>

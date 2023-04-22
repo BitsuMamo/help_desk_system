@@ -6,6 +6,7 @@ import controller.TicketController;
 import model.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class ManagerView {
@@ -67,9 +68,7 @@ public class ManagerView {
         int servicer_id = Util.getId(keyboard, "Servicer");
 
         List<Ticket> tickets = ticketController.getByServicer(servicer_id);
-        tickets.forEach(ticket -> {
-            ticketController.updateServicer(ticket.getId(), null);
-        });
+        tickets.forEach(ticket -> ticketController.updateServicer(ticket.getId(), null));
 
         servicerController.delete(servicer_id);
     }
@@ -80,9 +79,7 @@ public class ManagerView {
 
 
         List<Ticket> tickets = ticketController.getByCustomer(customer_id);
-        tickets.forEach(ticket -> {
-            ticketController.delete(ticket.getId());
-        });
+        tickets.forEach(ticket -> ticketController.delete(ticket.getId()));
 
         customerController.delete(customer_id);
     }
@@ -157,6 +154,7 @@ public class ManagerView {
 
         int id2 = Util.getId(keyboard, "Servicer");
 
-        ticketController.updateServicer(id, servicerController.getById(id2).get());
+        Optional<Servicer> servicer = servicerController.getById(id2);
+        ticketController.updateServicer(id, servicer.orElse(null));
     }
 }
