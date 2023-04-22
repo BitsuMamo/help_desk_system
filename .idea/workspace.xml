@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Added some rest and json">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="db">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JDBC/ConnectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JDBC/ConnectManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ServicerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ServicerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Servicer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Servicer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" afterDir="false" />
@@ -145,7 +133,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682119137482</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished up CLI and functionalities">
+      <created>1682184373837</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682184373837</updated>
+    </task>
+    <task id="LOCAL-00006" summary="db">
+      <created>1682184497951</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682184497951</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +158,8 @@
     <MESSAGE value="Finished Half the View" />
     <MESSAGE value="Started db integration with sqllite." />
     <MESSAGE value="added sqlite file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sqlite file" />
+    <MESSAGE value="Finished up CLI and functionalities" />
+    <MESSAGE value="db" />
+    <option name="LAST_COMMIT_MESSAGE" value="db" />
   </component>
 </project>

@@ -57,19 +57,17 @@ public class ManagerView {
 
     private void deleteTicket() {
         viewTickets();
-        System.out.print("Enter Ticket ID: ");
-        int ticket_id = keyboard.nextInt();
+        int ticket_id = Util.getId(keyboard, "Ticket");
 
         ticketController.delete(ticket_id);
     }
 
     private void deleteServicer() {
         viewServicers();
-        System.out.print("Enter Servicer ID: ");
-        int servicer_id = keyboard.nextInt();
+        int servicer_id = Util.getId(keyboard, "Servicer");
 
         List<Ticket> tickets = ticketController.getByServicer(servicer_id);
-        tickets.stream().forEach(ticket -> {
+        tickets.forEach(ticket -> {
             ticketController.updateServicer(ticket.getId(), null);
         });
 
@@ -78,11 +76,11 @@ public class ManagerView {
 
     private void deleteCustomer() {
         viewCustomers();
-        System.out.print("Enter Customer ID: ");
-        int customer_id = keyboard.nextInt();
+        int customer_id = Util.getId(keyboard, "Customer");
+
 
         List<Ticket> tickets = ticketController.getByCustomer(customer_id);
-        tickets.stream().forEach(ticket -> {
+        tickets.forEach(ticket -> {
             ticketController.delete(ticket.getId());
         });
 
@@ -91,8 +89,7 @@ public class ManagerView {
 
     private void viewTicketByCustomer() {
         viewCustomers();
-        System.out.print("Enter Customer ID: ");
-        int customer_id = keyboard.nextInt();
+        int customer_id = Util.getId(keyboard, "Customer");
         List<Ticket> tickets = ticketController.getByCustomer(customer_id);
         Util.printTickets(tickets);
     }
@@ -109,30 +106,39 @@ public class ManagerView {
 
     private void createServicer() {
         String name, userName, password;
-        System.out.print("Enter Name: ");
+        System.out.println("+--------------------------------------------");
+        System.out.printf("|%-20s >    ", "Enter Name: ");
         name = keyboard.nextLine();
-        System.out.print("Enter User Name: ");
+        System.out.println("+--------------------------------------------");
+        System.out.printf("|%-20s >    ", "Enter User Name: ");
         userName = keyboard.nextLine();
-        System.out.print("Enter Password: ");
+        System.out.println("+--------------------------------------------");
+        System.out.printf("|%-20s >    ", "Enter Password: ");
         password = keyboard.nextLine();
+        System.out.println("+--------------------------------------------");
 
         Servicer newServicer = new Servicer(name, userName, password);
-        System.out.println(servicerController.create(newServicer));
+        servicerController.create(newServicer);
     }
 
     //TODO Finish
     private void createCustomer() {
         String name, userName, password;
-        System.out.print("Enter Name: ");
+        System.out.println("+--------------------------------------------");
+        System.out.printf("|%-20s >    ", "Enter Name: ");
         name = keyboard.nextLine();
-        System.out.print("Enter User Name: ");
+        System.out.println("+--------------------------------------------");
+        System.out.printf("|%-20s >    ", "Enter User Name: ");
         userName = keyboard.nextLine();
-        System.out.print("Enter Password: ");
+        System.out.println("+--------------------------------------------");
+        System.out.printf("|%-20s >    ", "Enter Password: ");
         password = keyboard.nextLine();
+        System.out.println("+--------------------------------------------");
 
         Customer newCustomer = new Customer(name, userName, password);
-        System.out.println(customerController.create(newCustomer));
+        customerController.create(newCustomer);
     }
+
     public void viewTickets(){
         List<Ticket> tickets = ticketController.getAll();
         Util.printTickets(tickets);
@@ -147,12 +153,9 @@ public class ManagerView {
 
         Util.printTickets(unAssignedTicket);
 
-        System.out.println("Enter Ticket ID: ");
-        int id = keyboard.nextInt();
+        int id = Util.getId(keyboard, "Ticket");
 
-        Util.printUser(servicerController.getAll());
-        System.out.println("Enter Servicer ID");
-        int id2 = keyboard.nextInt();
+        int id2 = Util.getId(keyboard, "Servicer");
 
         ticketController.updateServicer(id, servicerController.getById(id2).get());
     }

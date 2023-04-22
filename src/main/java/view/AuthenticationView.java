@@ -16,13 +16,23 @@ public class AuthenticationView {
 
         Optional<User> user = Optional.empty();
         while(user.isEmpty()){
-            System.out.print("Enter UserName: ");
+            System.out.println("+-----+");
+            System.out.println("|Login|");
+            System.out.println("+-----+--------------------+");
+            System.out.printf("|%-10s>    ", "UserName");
             String userName = keyboard.nextLine().trim();
-            System.out.print("Enter Password: ");
+            System.out.println("+--------------------------+");
+            System.out.printf("|%-10s>    ", "Password");
             String password = keyboard.nextLine().trim();
+            System.out.println("+--------------------------+");
+
 
             user = authController.logIn(userName, password);
-            if(user.isEmpty()) System.out.println("Wrong Credentials");
+            if(user.isEmpty()) {
+                System.out.println("+-----------------+");
+                System.out.println("|Wrong Credentials|");
+                System.out.println("+-----------------+");
+            }
         }
 
         switch (user.get().getUserType()) {

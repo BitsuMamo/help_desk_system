@@ -27,6 +27,7 @@ public class CustomerView {
                     "Exit"
             );
             input = keyboard.nextInt();
+            keyboard.nextLine();
 
             switch (input) {
                 case 1 -> createTicket();
@@ -51,8 +52,7 @@ public class CustomerView {
     private void deleteActiveTicket() {
         viewActiveTickets();
         int id;
-        System.out.print("Enter ID: ");
-        id = keyboard.nextInt();
+        id = Util.getId(keyboard, "Ticket");
         ticketController.delete(id);
     }
 
@@ -65,11 +65,13 @@ public class CustomerView {
     private void createTicket() {
         String title, desc;
 
-        keyboard.nextLine();
-        System.out.print("Enter Title: ");
+        System.out.println("+------------------------------------------------");
+        System.out.printf("|%12s >    ", "Enter Title");
         title = keyboard. nextLine();
-        System.out.print("Enter Desc: ");
+        System.out.println("+------------------------------------------------");
+        System.out.printf("|%12s >    ", "Enter Desc");
         desc = keyboard.nextLine();
+        System.out.println("+------------------------------------------------");
 
         Ticket newTicket = new Ticket(title, desc, cust);
         ticketController.create(newTicket);

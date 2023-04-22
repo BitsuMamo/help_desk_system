@@ -5,6 +5,7 @@ import model.Ticket;
 import model.User;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Util {
     public static String createSeparator(String sep, String start, String end, Integer size){
@@ -73,5 +74,13 @@ public class Util {
         System.out.println("+-----+-------------------------+");
 
         System.out.printf("|%-5s|", ">");
+    }
+
+    public static int getId(Scanner keyboard, String type){
+        System.out.println("+---------------------------------");
+        System.out.printf("|%20s>    ","Enter "+ type +" ID: ");
+        int id = keyboard.nextInt();
+        System.out.println("+---------------------------------");
+        return id;
     }
 }

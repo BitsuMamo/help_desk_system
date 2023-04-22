@@ -45,8 +45,7 @@ public class ServicerView {
 
     private void resolveTicket() {
         showActiveTickets();
-        System.out.println("Enter ID: ");
-        int id = keyboard.nextInt();
+        int id = Util.getId(keyboard, "Ticket");
         ticketController.updateStatus(id);
     }
 
