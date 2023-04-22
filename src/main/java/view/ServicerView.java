@@ -1,6 +1,5 @@
 package view;
 
-import controller.ServicerController;
 import controller.TicketController;
 import model.Servicer;
 import model.Ticket;
@@ -19,26 +18,26 @@ public class ServicerView {
 
     public void showServicerView(){
         int input;
+
+        Util.printGreeting(servicer);
+
         do{
-            System.out.println("1. Show Active Tickets");
-            System.out.println("2. Show Ticket");
-            System.out.println("3. Resolve Ticket");
-            System.out.println("4. Exit");
+            Util.printMenu("Show Active Tickets", "Show Resolved Ticket", "Resolve Ticket", "Exit");
             input = keyboard.nextInt();
 
             switch (input) {
                 case 1 -> showActiveTickets();
-                case 2 -> showTickets();
+                case 2 -> showResolvedTickets();
                 case 3 -> resolveTicket();
                 case 4 -> new AuthenticationView().showAuthScreen();
             }
 
 
-        }while (input != 3);
+        }while (input != 4);
     }
 
     private void showActiveTickets() {
-        List<Ticket> tickets = ticketController.getByServicer(servicer).stream()
+        List<Ticket> tickets = ticketController.getByServicer(servicer.getId()).stream()
                 .filter(ticket -> !ticket.isFixed())
                 .toList();
         Util.printTickets(tickets);
@@ -51,8 +50,10 @@ public class ServicerView {
         ticketController.updateStatus(id);
     }
 
-    private void showTickets() {
-        List<Ticket> tickets = ticketController.getByServicer(servicer);
+    private void showResolvedTickets() {
+        List<Ticket> tickets = ticketController.getByServicer(servicer.getId()).stream()
+                .filter(Ticket::isFixed)
+                .toList();
         Util.printTickets(tickets);
     }
 }

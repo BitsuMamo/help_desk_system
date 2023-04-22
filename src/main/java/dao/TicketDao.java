@@ -88,6 +88,8 @@ public class TicketDao implements IDao<Ticket>{
     public Ticket create(Ticket data) {
         String query = "INSERT INTO Ticket (title, created_at, desc, customer_id, isFixed) VALUES (?, ?, ?, ?, ?)";
 
+        int id;
+
         try(PreparedStatement statement = conn.prepareStatement(query)){
             statement.setString(1, data.getTitle());
             statement.setString(2, data.getCreatedAt().toString());
@@ -96,11 +98,13 @@ public class TicketDao implements IDao<Ticket>{
             statement.setInt(5, data.isFixed() ? 1 : 0);
 
             statement.executeUpdate();
+
+            id = Util.getLastRow(conn);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        return getById(data.getId()).orElse(null);
+        return getById(id).orElse(null);
     }
 
     @Override
@@ -118,17 +122,17 @@ public class TicketDao implements IDao<Ticket>{
         return ticket;
     }
 
-    public List<Ticket> getByCustomer(Customer customer){
+    public List<Ticket> getByCustomer(Integer customer_id){
         List<Ticket> returnTickets = new ArrayList<>();
         String query = "SELECT * FROM Ticket WHERE customer_id = ?";
-        return getTickets(returnTickets, query, customer.getId());
+        return getTickets(returnTickets, query, customer_id);
     }
 
-    public List<Ticket> getByServicer(Servicer servicer){
+    public List<Ticket> getByServicer(Integer servicer_id){
         List<Ticket> returnTickets = new ArrayList<>();
 
         String query = "SELECT * FROM Ticket WHERE servicer_id = ?";
-        return getTickets(returnTickets, query, servicer.getId());
+        return getTickets(returnTickets, query, servicer_id);
     }
 
     private List<Ticket> getTickets(List<Ticket> returnTickets, String query, Integer id) {
@@ -162,11 +166,12 @@ public class TicketDao implements IDao<Ticket>{
         return returnTickets;
     }
 
-    public void addServicer(int ticket_id, int servicerId){
+    public void addServicer(int ticket_id, Integer servicerId){
         String query = "UPDATE Ticket SET servicer_id = ? WHERE id = ?";
 
         try(PreparedStatement statement = conn.prepareStatement(query)){
-            statement.setInt(1, servicerId);
+            String servicer = servicerId == null ? null : String.valueOf(servicerId);
+            statement.setString(1, servicer);
             statement.setInt(2, ticket_id);
             statement.executeUpdate();
         } catch (SQLException e) {

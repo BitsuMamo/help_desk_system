@@ -17,9 +17,9 @@ public class AuthenticationView {
         Optional<User> user = Optional.empty();
         while(user.isEmpty()){
             System.out.print("Enter UserName: ");
-            String userName = keyboard.nextLine();
+            String userName = keyboard.nextLine().trim();
             System.out.print("Enter Password: ");
-            String password = keyboard.nextLine();
+            String password = keyboard.nextLine().trim();
 
             user = authController.logIn(userName, password);
             if(user.isEmpty()) System.out.println("Wrong Credentials");

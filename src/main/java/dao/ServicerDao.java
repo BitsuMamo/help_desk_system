@@ -74,7 +74,7 @@ public class ServicerDao implements IDao<Servicer>{
     @Override
     public Servicer create(Servicer data) {
         String query = "INSERT INTO User (name, userName, password, type) VALUES (?, ?, ?, ?)";
-
+        int id;
         try(PreparedStatement statement = conn.prepareStatement(query)){
             statement.setString(1, data.getName());
             statement.setString(2, data.getUserName());
@@ -82,12 +82,14 @@ public class ServicerDao implements IDao<Servicer>{
             statement.setString(4, data.getUserType());
 
             statement.executeUpdate();
+
+            id = Util.getLastRow(conn);
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
 
-        return getById(data.getId()).orElse(null);
+        return getById(id).orElse(null);
     }
 
     @Override

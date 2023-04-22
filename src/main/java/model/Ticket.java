@@ -29,13 +29,14 @@ public class Ticket {
         this(id, title, description, customer, servicer, isFixed);
         this.createdAt = createdAt;
     }
-    public Ticket(Integer id, String title, String description, Customer customer) {
+    public Ticket(String title, String description, Customer customer) {
+        this(null, title, description, customer, null, false);
     }
 
     @Override
     public String toString(){
         return String.format(
-                "|%-50d|%50s|%50s|%50s|%50s|%50s|",
+                "|%-40d|%40s|%40s|%40s|%40s|%40s|",
                 id, createdAt, title, description, customer.getName(), servicer == null ? "" : servicer.getName()
         );
     }

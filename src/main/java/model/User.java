@@ -15,4 +15,12 @@ public abstract class User {
     private String userType;
 
     abstract String getType();
+
+    @Override
+    public String toString(){
+        return String.format(
+                "|%-20s|%20s|%20s|",
+                getId(), getName(), getType()
+        );
+    }
 }

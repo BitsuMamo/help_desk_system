@@ -72,6 +72,7 @@ public class CustomerDao implements IDao<Customer>{
     @Override
     public Customer create(Customer data) {
 
+        int id;
 
         String query = "INSERT INTO User (name, userName, password, type) VALUES (?, ?, ?, ?)";
 
@@ -82,12 +83,13 @@ public class CustomerDao implements IDao<Customer>{
             statement.setString(4, data.getUserType());
 
             statement.executeUpdate();
+
+            id = Util.getLastRow(conn);
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-
-        return getById(data.getId()).orElse(null);
+        return getById(id).orElse(null);
     }
 
     @Override

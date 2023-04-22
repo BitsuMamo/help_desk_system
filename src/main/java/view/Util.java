@@ -25,34 +25,53 @@ public class Util {
     }
 
     public static void printTickets(List<Ticket> tickets){
-        System.out.println(createSeparator("-", "+", "+", 300 + 6));
+        System.out.println(createSeparator("-", "+", "+", 240 + 6));
         System.out.printf(
-                "|%-50s|%50s|%50s|%50s|%50s|%50s|%n",
+                "|%-40s|%40s|%40s|%40s|%40s|%40s|%n",
                 "ID", "Created At", "Title", "Desc", "Cust", "Servicer"
         );
 
 
         tickets.forEach((x) -> {
-            System.out.println(createSeparatorInternal("-", "+", 50, 6));
+            System.out.println(createSeparatorInternal("-", "+", 40, 6));
             System.out.println(x);
         });
 
-        System.out.println(createSeparator("-", "+", "+", 300 + 6));
+        System.out.println(createSeparator("-", "+", "+", 240 + 6));
 
     }
 
     public static void printUser(List<? extends User> users){
-        System.out.println(createSeparator("-", "+", "+", 42));
+        System.out.println(createSeparator("-", "+", "+", 63));
         System.out.printf(
-                "|%-20s|%20s|%n",
-                "ID", "Name"
+                "|%-20s|%20s|%20s|%n",
+                "ID", "Name", "Type"
         );
 
         users.forEach((x) -> {
-            System.out.println(createSeparatorInternal("-", "+", 20, 2));
+            System.out.println(createSeparatorInternal("-", "+", 20, 3));
             System.out.println(x);
         });
 
-        System.out.println(createSeparator("-", "+", "+", 42));
+        System.out.println(createSeparator("-", "+", "+", 63));
+    }
+
+    public static void printGreeting(User user){
+        System.out.println(Util.createSeparatorInternal("-", "+", 20, 3));
+        System.out.printf("|%20s|%20s|%20s|%n","WELCOME" ,user.getUserType(), user.getName());
+        System.out.println(Util.createSeparatorInternal("-", "+", 20, 3));
+        System.out.println();
+    }
+
+    public static void printMenu(String... menuItems){
+        System.out.println("+-----+");
+        System.out.println("|MENU |");
+        System.out.println("+-----+-------------------------+");
+        for(int i = 0; i < menuItems.length; i++){
+            System.out.printf("|%-5d|%-25s|%n", i + 1, menuItems[i]);
+        }
+        System.out.println("+-----+-------------------------+");
+
+        System.out.printf("|%-5s|", ">");
     }
 }

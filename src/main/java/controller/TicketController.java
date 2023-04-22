@@ -30,12 +30,12 @@ public class TicketController implements ICommon<Ticket>{
         return ticketDao.delete(id);
     }
 
-    public List<Ticket> getByCustomer(Customer customer){
-        return ticketDao.getByCustomer(customer);
+    public List<Ticket> getByCustomer(Integer customer_id){
+        return ticketDao.getByCustomer(customer_id);
     }
 
-    public List<Ticket> getByServicer(Servicer servicer){
-        return ticketDao.getByServicer(servicer);
+    public List<Ticket> getByServicer(Integer servicer_id){
+        return ticketDao.getByServicer(servicer_id);
     }
 
     public void updateStatus(Integer id){
@@ -43,7 +43,8 @@ public class TicketController implements ICommon<Ticket>{
     }
 
     public void updateServicer(Integer id, Servicer servicer){
-        ticketDao.addServicer(id, servicer.getId());
+        Integer servicer_id = servicer == null ? null : servicer.getId();
+        ticketDao.addServicer(id, servicer_id);
     }
 
 }

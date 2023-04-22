@@ -13,7 +13,7 @@ public class ConnectManager{
 //	private static final String USERNAME = "app";
 //	private static final String PASSWORD = "app";
 	
-	private static final String DB_URL = "jdbc:sqlite:identifier.sqlite";
+	private static final String DB_URL = "jdbc:sqlite:db.sqlite";
 
 	/* replace with new Optional pattern
 	private static Connection conn = null;

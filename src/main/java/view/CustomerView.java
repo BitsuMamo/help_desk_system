@@ -16,12 +16,16 @@ public class CustomerView {
     }
     public void showCustomerView(){
         int input;
+        Util.printGreeting(cust);
+
         do {
-            System.out.println("1. Create Ticket");
-            System.out.println("2. View Active Tickets");
-            System.out.println("3. Delete Active Ticket");
-            System.out.println("4. View Resolved Tickets");
-            System.out.println("5. Exit");
+            Util.printMenu(
+                    "Create Ticket",
+                    "View Active Tickets",
+                    "Delete Active Ticket",
+                    "View Resolved Tickets",
+                    "Exit"
+            );
             input = keyboard.nextInt();
 
             switch (input) {
@@ -37,10 +41,11 @@ public class CustomerView {
     }
 
     private void viewResolvedTickets() {
-        List<Ticket> tickets = ticketController.getByCustomer(cust);
-        tickets.stream()
+        List<Ticket> tickets = ticketController.getByCustomer(cust.getId()).stream()
                 .filter(Ticket::isFixed)
-                .forEach(System.out::println);
+                .toList();
+        Util.printTickets(tickets);
+
     }
 
     private void deleteActiveTicket() {
@@ -52,24 +57,21 @@ public class CustomerView {
     }
 
     private void viewActiveTickets() {
-        List<Ticket> tickets = ticketController.getByCustomer(cust);
+        List<Ticket> tickets = ticketController.getByCustomer(cust.getId());
         Util.printTickets(tickets);
 
     }
 
     private void createTicket() {
-        int id;
         String title, desc;
 
-        System.out.print("Enter ID: ");
-        id = keyboard.nextInt();
         keyboard.nextLine();
         System.out.print("Enter Title: ");
         title = keyboard. nextLine();
         System.out.print("Enter Desc: ");
         desc = keyboard.nextLine();
 
-        Ticket newTicket = new Ticket(id, title, desc, cust);
+        Ticket newTicket = new Ticket(title, desc, cust);
         ticketController.create(newTicket);
     }
 }
