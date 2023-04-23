@@ -3,6 +3,7 @@ package controller;
 import dao.CustomerDao;
 import dao.IDao;
 import model.Customer;
+import model.Ticket;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,6 +28,10 @@ public class CustomerController implements ICommon<Customer> {
 
     @Override
     public Customer delete(Integer id) {
+        TicketController ticketController = new TicketController();
+        List<Ticket> tickets = ticketController.getByCustomer(id);
+        tickets.forEach(ticket -> ticketController.delete(ticket.getId()));
+
         return customerDao.delete(id);
     }
 

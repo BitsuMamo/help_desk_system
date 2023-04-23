@@ -5,6 +5,7 @@ import controller.ServicerController;
 import controller.TicketController;
 import model.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -67,8 +68,6 @@ public class ManagerView {
         viewServicers();
         int servicer_id = Util.getId(keyboard, "Servicer");
 
-        List<Ticket> tickets = ticketController.getByServicer(servicer_id);
-        tickets.forEach(ticket -> ticketController.updateServicer(ticket.getId(), null));
 
         Util.printUser(List.of(servicerController.delete(servicer_id)));
     }
@@ -76,10 +75,6 @@ public class ManagerView {
     private void deleteCustomer() {
         viewCustomers();
         int customer_id = Util.getId(keyboard, "Customer");
-
-
-        List<Ticket> tickets = ticketController.getByCustomer(customer_id);
-        tickets.forEach(ticket -> ticketController.delete(ticket.getId()));
 
         Util.printUser(List.of(customerController.delete(customer_id)));
     }
@@ -102,61 +97,50 @@ public class ManagerView {
     }
 
     private void createServicer() {
-        String name, userName, password;
-        System.out.println("+--------------------------------------------");
-        System.out.printf("|%-20s >    ", "Enter Name: ");
-        name = keyboard.nextLine();
-        System.out.println("+--------------------------------------------");
-        System.out.printf("|%-20s >    ", "Enter User Name: ");
-        userName = keyboard.nextLine();
-        System.out.println("+--------------------------------------------");
-        System.out.printf("|%-20s >    ", "Enter Password: ");
-        password = keyboard.nextLine();
-        System.out.println("+--------------------------------------------");
+        HashMap<String, String> input = new HashMap<>();
+        getUserInput(input);
 
-        Servicer newServicer = new Servicer(name, userName, password);
+        Servicer newServicer = new Servicer(input.get("NAME"), input.get("USERNAME"), input.get("PASSWORD"));
         servicerController.create(newServicer);
     }
 
-    //TODO Finish
     private void createCustomer() {
-        String name, userName, password;
-        System.out.println("+--------------------------------------------");
-        System.out.printf("|%-20s >    ", "Enter Name: ");
-        name = keyboard.nextLine();
-        System.out.println("+--------------------------------------------");
-        System.out.printf("|%-20s >    ", "Enter User Name: ");
-        userName = keyboard.nextLine();
-        System.out.println("+--------------------------------------------");
-        System.out.printf("|%-20s >    ", "Enter Password: ");
-        password = keyboard.nextLine();
-        System.out.println("+--------------------------------------------");
+        HashMap<String, String> input = new HashMap<>();
+        getUserInput(input);
 
-        Customer newCustomer = new Customer(name, userName, password);
+        Customer newCustomer =  new Customer(input.get("NAME"), input.get("USERNAME"), input.get("PASSWORD"));
         customerController.create(newCustomer);
     }
 
-    public void viewTickets(){
+    private void viewTickets(){
         List<Ticket> tickets = ticketController.getAll();
         Util.printTickets(tickets);
     }
 
-    public void assignTicket(){
-        List<Ticket> tickets = ticketController.getAll();
-
-        List<Ticket> unAssignedTicket = tickets.stream()
-                .filter(ticket -> ticket.getServicer() == null)
-                .toList();
-
+    private void assignTicket(){
+       List<Ticket> unAssignedTicket = ticketController.getUnAssignedTicket();
         Util.printTickets(unAssignedTicket);
 
-        int id = Util.getId(keyboard, "Ticket");
+        int ticketId = Util.getId(keyboard, "Ticket");
 
         viewServicers();
 
-        int id2 = Util.getId(keyboard, "Servicer");
+        int servicerId = Util.getId(keyboard, "Servicer");
 
-        Optional<Servicer> servicer = servicerController.getById(id2);
-        ticketController.updateServicer(id, servicer.orElse(null));
+        Optional<Servicer> servicer = servicerController.getById(servicerId);
+        ticketController.updateServicer(ticketId, servicer.orElse(null));
+    }
+
+    private void getUserInput(HashMap<String, String> input){
+        System.out.println("+--------------------------------------------");
+        System.out.printf("|%-20s >    ", "Enter Name: ");
+        input.put("NAME", keyboard.nextLine());
+        System.out.println("+--------------------------------------------");
+        System.out.printf("|%-20s >    ", "Enter User Name: ");
+        input.put("USERNAME", keyboard.nextLine());
+        System.out.println("+--------------------------------------------");
+        System.out.printf("|%-20s >    ", "Enter Password: ");
+        input.put("PASSWORD", keyboard.nextLine());
+        System.out.println("+--------------------------------------------");
     }
 }

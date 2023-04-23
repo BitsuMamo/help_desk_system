@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public class ServicerView {
     private final Scanner keyboard = new Scanner(System.in);
-//    private final ServicerController servicerController = new ServicerController();
     private final TicketController ticketController = new TicketController();
     private final Servicer servicer;
     ServicerView(Servicer servicer){
@@ -37,10 +36,7 @@ public class ServicerView {
     }
 
     private void showActiveTickets() {
-        List<Ticket> tickets = ticketController.getByServicer(servicer.getId()).stream()
-                .filter(ticket -> !ticket.isFixed())
-                .toList();
-        Util.printTickets(tickets);
+        Util.printTickets(ticketController.showActiveTickets(servicer));
     }
 
     private void resolveTicket() {
@@ -50,9 +46,6 @@ public class ServicerView {
     }
 
     private void showResolvedTickets() {
-        List<Ticket> tickets = ticketController.getByServicer(servicer.getId()).stream()
-                .filter(Ticket::isFixed)
-                .toList();
-        Util.printTickets(tickets);
+        Util.printTickets(ticketController.getFixedTicket(servicer.getId()));
     }
 }

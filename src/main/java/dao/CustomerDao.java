@@ -97,6 +97,7 @@ public class CustomerDao implements IDao<Customer>{
         Customer customer = getById(id).orElse(null);
         String query = "DELETE FROM User WHERE id = ?";
 
+
         try(PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setInt(1, id);
 
@@ -105,6 +106,7 @@ public class CustomerDao implements IDao<Customer>{
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
+
         return customer;
     }
 }
