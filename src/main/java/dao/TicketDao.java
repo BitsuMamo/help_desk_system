@@ -1,8 +1,6 @@
 package dao;
 
 import JDBC.ConnectManager;
-import model.Customer;
-import model.Servicer;
 import model.Ticket;
 
 import java.sql.Connection;
@@ -55,7 +53,7 @@ public class TicketDao implements IDao<Ticket>{
 
     @Override
     public Optional<Ticket> getById(Integer id) {
-        Ticket returnTicket = null;
+        Ticket returnTicket;
         String query = "SELECT * FROM Ticket WHERE id = ?";
         try(PreparedStatement statement = conn.prepareStatement(query)){
             statement.setInt(1, id);
@@ -108,8 +106,12 @@ public class TicketDao implements IDao<Ticket>{
     }
 
     @Override
-    public Ticket delete(Integer id) {
-        Ticket ticket = getById(id).orElse(null);
+    public Optional<Ticket> delete(Integer id) {
+        Optional<Ticket> ticket = getById(id);
+        if(ticket.isEmpty()){
+            return Optional.empty();
+        }
+
         String query = "DELETE FROM Ticket WHERE id = ?";
         try(PreparedStatement stmt = conn.prepareStatement(query)){
             stmt.setInt(1, id);
@@ -122,13 +124,13 @@ public class TicketDao implements IDao<Ticket>{
         return ticket;
     }
 
-    public List<Ticket> getByCustomer(Integer customer_id){
+    public List<Ticket> getTicketByCustomer(Integer customer_id){
         List<Ticket> returnTickets = new ArrayList<>();
         String query = "SELECT * FROM Ticket WHERE customer_id = ?";
         return getTickets(returnTickets, query, customer_id);
     }
 
-    public List<Ticket> getByServicer(Integer servicer_id){
+    public List<Ticket> getTicketByServicer(Integer servicer_id){
         List<Ticket> returnTickets = new ArrayList<>();
 
         String query = "SELECT * FROM Ticket WHERE servicer_id = ?";
@@ -166,7 +168,7 @@ public class TicketDao implements IDao<Ticket>{
         return returnTickets;
     }
 
-    public void addServicer(int ticket_id, Integer servicerId){
+    public void addServicerToExistingTicket(int ticket_id, Integer servicerId){
         String query = "UPDATE Ticket SET servicer_id = ? WHERE id = ?";
 
         try(PreparedStatement statement = conn.prepareStatement(query)){

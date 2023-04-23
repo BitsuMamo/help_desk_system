@@ -44,7 +44,7 @@ public class Util {
     }
 
     // Prints a list of Users
-    public static void printUser(List<? extends User> users){
+    public static void printUsers(List<? extends User> users){
         System.out.println(createSeparator("-", "+", "+", 63));
         System.out.printf(
                 "|%20s|%-20s|%-20s|%n",
@@ -89,4 +89,9 @@ public class Util {
         return id;
     }
 
+    public static void printMsg(String s) {
+        System.out.println("+------------------------------+");
+        System.out.printf("|%-30s|%n", s);
+        System.out.println("+------------------------------+");
+    }
 }

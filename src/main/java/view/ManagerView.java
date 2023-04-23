@@ -61,22 +61,40 @@ public class ManagerView {
         viewTickets();
         int ticket_id = Util.getId(keyboard, "Ticket");
 
-        Util.printTickets(List.of(ticketController.delete(ticket_id)));
+        Optional<Ticket> ticket = ticketController.delete(ticket_id);
+        if(ticket.isPresent()){
+            Util.printMsg("DELETED");
+            Util.printTickets(List.of(ticket.get()));
+            return;
+        }
+        Util.printMsg("Ticket Doesn't Exits");
+
     }
 
     private void deleteServicer() {
         viewServicers();
         int servicer_id = Util.getId(keyboard, "Servicer");
 
-
-        Util.printUser(List.of(servicerController.delete(servicer_id)));
+        Optional<Servicer> servicer = servicerController.delete(servicer_id);
+        if (servicer.isPresent()){
+            Util.printMsg("DELETED");
+            Util.printUsers(List.of(servicer.get()));
+            return;
+        }
+        Util.printMsg("Servicer Doesn't Exist");
     }
 
     private void deleteCustomer() {
         viewCustomers();
         int customer_id = Util.getId(keyboard, "Customer");
 
-        Util.printUser(List.of(customerController.delete(customer_id)));
+        Optional<Customer> customer = customerController.delete(customer_id);
+        if(customer.isPresent()){
+            Util.printMsg("DELETED");
+            Util.printUsers(List.of(customer.get()));
+            return;
+        }
+        Util.printMsg("Customer Doesn't Exist");
     }
 
     private void viewTicketByCustomer() {
@@ -88,12 +106,12 @@ public class ManagerView {
 
     private void viewServicers() {
         List<Servicer> servicers = servicerController.getAll();
-        Util.printUser(servicers);
+        Util.printUsers(servicers);
     }
 
     private void viewCustomers() {
        List<Customer> customers = customerController.getAll();
-       Util.printUser(customers);
+       Util.printUsers(customers);
     }
 
     private void createServicer() {
@@ -101,15 +119,19 @@ public class ManagerView {
         getUserInput(input);
 
         Servicer newServicer = new Servicer(input.get("NAME"), input.get("USERNAME"), input.get("PASSWORD"));
-        servicerController.create(newServicer);
+        Util.printMsg("CREATED");
+        Servicer servicer = servicerController.create(newServicer);
+        Util.printUsers(List.of(servicer));
     }
 
     private void createCustomer() {
         HashMap<String, String> input = new HashMap<>();
         getUserInput(input);
 
+        Util.printMsg("CREATED");
         Customer newCustomer =  new Customer(input.get("NAME"), input.get("USERNAME"), input.get("PASSWORD"));
-        customerController.create(newCustomer);
+        Customer customer = customerController.create(newCustomer);
+        Util.printUsers(List.of(customer));
     }
 
     private void viewTickets(){

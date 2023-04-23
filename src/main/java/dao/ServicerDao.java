@@ -1,7 +1,6 @@
 package dao;
 
 import JDBC.ConnectManager;
-import model.Customer;
 import model.Servicer;
 
 import java.sql.Connection;
@@ -93,8 +92,12 @@ public class ServicerDao implements IDao<Servicer>{
     }
 
     @Override
-    public Servicer delete(Integer id) {
-        Servicer servicer = getById(id).orElse(null);
+    public Optional<Servicer> delete(Integer id) {
+        Optional<Servicer> servicer = getById(id);
+        if(servicer.isEmpty()){
+            return Optional.empty();
+        }
+
         String query = "DELETE FROM User WHERE id = ?";
 
         try(PreparedStatement statement = conn.prepareStatement(query)) {

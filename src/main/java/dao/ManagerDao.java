@@ -1,7 +1,6 @@
 package dao;
 
 import JDBC.ConnectManager;
-import model.Customer;
 import model.Manager;
 
 import java.sql.Connection;
@@ -13,7 +12,7 @@ import java.util.Optional;
 
 public class
 ManagerDao implements IDao<Manager>{
-    private Connection conn;
+    private final Connection conn;
 
     public ManagerDao(){
         conn = new ConnectManager().getConnection();
@@ -71,8 +70,11 @@ ManagerDao implements IDao<Manager>{
     }
 
     @Override
-    public Manager delete(Integer id) {
-        Manager manager = getById(id).orElse(null);
+    public Optional<Manager> delete(Integer id) {
+        Optional<Manager> manager = getById(id);
+        if(manager.isEmpty()){
+            return Optional.empty();
+        }
 
         String query = "DELETE FROM User WHERE id = ?";
 

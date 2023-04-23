@@ -2,12 +2,13 @@ package model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.SuperBuilder;
+import lombok.NonNull;
 
 @Data
 @AllArgsConstructor
+@NonNull
 public abstract class User {
+
     private Integer id;
     private String name;
     private String userName;

@@ -10,5 +10,5 @@ public interface ICommon<T> {
 
     T create(T data);
 
-    T delete(Integer id);
+    Optional<T> delete(Integer id);
 }

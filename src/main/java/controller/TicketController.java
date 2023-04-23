@@ -1,7 +1,6 @@
 package controller;
 
 import dao.TicketDao;
-import model.Customer;
 import model.Servicer;
 import model.Ticket;
 
@@ -27,16 +26,16 @@ public class TicketController implements ICommon<Ticket>{
     }
 
     @Override
-    public Ticket delete(Integer id) {
+    public Optional<Ticket> delete(Integer id) {
         return ticketDao.delete(id);
     }
 
     public List<Ticket> getByCustomer(Integer customer_id){
-        return ticketDao.getByCustomer(customer_id);
+        return ticketDao.getTicketByCustomer(customer_id);
     }
 
     public List<Ticket> getByServicer(Integer servicer_id){
-        return ticketDao.getByServicer(servicer_id);
+        return ticketDao.getTicketByServicer(servicer_id);
     }
 
     public void updateStatus(Integer id){
@@ -45,7 +44,7 @@ public class TicketController implements ICommon<Ticket>{
 
     public void updateServicer(Integer id, Servicer servicer){
         Integer servicer_id = servicer == null ? null : servicer.getId();
-        ticketDao.addServicer(id, servicer_id);
+        ticketDao.addServicerToExistingTicket(id, servicer_id);
     }
 
 

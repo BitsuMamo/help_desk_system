@@ -5,6 +5,7 @@ import model.Customer;
 import model.Ticket;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class CustomerView {
@@ -49,7 +50,12 @@ public class CustomerView {
         viewActiveTickets();
         int id;
         id = Util.getId(keyboard, "Ticket");
-        Util.printTickets(List.of(ticketController.delete(id)));
+        Optional<Ticket> ticket = ticketController.delete(id);
+        if(ticket.isPresent()){
+            Util.printTickets(List.of(ticket.get()));
+            return;
+        }
+        Util.printMsg("Ticket Doesn't Exist");
     }
 
     private void viewActiveTickets() {
@@ -70,6 +76,8 @@ public class CustomerView {
         System.out.println("+------------------------------------------------");
 
         Ticket newTicket = new Ticket(title, desc, cust);
-        ticketController.create(newTicket);
+        Ticket ticket = ticketController.create(newTicket);
+        Util.printMsg("CREATED");
+        Util.printTickets(List.of(ticket));
     }
 }
