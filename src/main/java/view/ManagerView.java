@@ -152,6 +152,8 @@ public class ManagerView {
 
         int id = Util.getId(keyboard, "Ticket");
 
+        viewServicers();
+
         int id2 = Util.getId(keyboard, "Servicer");
 
         Optional<Servicer> servicer = servicerController.getById(id2);
