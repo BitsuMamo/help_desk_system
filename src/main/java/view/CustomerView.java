@@ -42,11 +42,7 @@ public class CustomerView {
     }
 
     private void viewResolvedTickets() {
-        List<Ticket> tickets = ticketController.getByCustomer(cust.getId()).stream()
-                .filter(Ticket::isFixed)
-                .toList();
-        Util.printTickets(tickets);
-
+        Util.printTickets(ticketController.getFixedTicket(cust.getId()));
     }
 
     private void deleteActiveTicket() {

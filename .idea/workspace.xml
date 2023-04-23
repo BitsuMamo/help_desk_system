@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="added servicer view">
+    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Finishing touches to UI">
+      <change afterPath="$PROJECT_DIR$/src/test/java/dao/AuthenticationDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dao/CustomerDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ServicerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ServicerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AuthenticationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthenticationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AuthenticationView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ServicerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,32 +34,44 @@
         <option value="module-info" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Ok4vAquNxW66jmQpFNPSezPVQe" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
+  <component name="ProjectId" id="2Ok4vAquNxW66jmQpFNPSezPVQe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Bitsu/Documents/help_desk_project/src/main/java/model",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "database.data.extractors.current.export.id": "SQL Inserts",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "test",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "openjdk-20",
+    "last_opened_file_path": "C:/Users/Bitsu/.m2/repository/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,18 +80,30 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.14857651",
     "project.structure.side.proportion": "0.21757323",
-    "settings.editor.selected.configurable": "Console",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "sqlite"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "SQLite"
     ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="model" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="dao" />
+      <recent name="controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="JDBC" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -86,30 +120,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Problem1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Final2015July.src.prob1.Problem1" />
+    <configuration name="AuthenticationDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="help_desk_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Final2015July.src.prob1.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.AuthenticationDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Problem1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Final2015July.src.prob1.Problem1" />
+    <configuration name="AuthenticationDaoTest.logInWithValidCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="help_desk_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Final2015July.src.prob1.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.AuthenticationDaoTest" />
+      <option name="METHOD_NAME" value="logInWithValidCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="help_desk_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.CustomerDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerDaoTest.getAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="help_desk_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.CustomerDaoTest" />
+      <option name="METHOD_NAME" value="getAll" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,8 +185,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Problem1 (1)" />
-        <item itemvalue="Application.Problem1" />
+        <item itemvalue="JUnit.CustomerDaoTest" />
+        <item itemvalue="JUnit.AuthenticationDaoTest" />
+        <item itemvalue="JUnit.CustomerDaoTest.getAll" />
+        <item itemvalue="JUnit.AuthenticationDaoTest.logInWithValidCustomer" />
       </list>
     </recent_temporary>
   </component>
@@ -131,64 +201,93 @@
       <option name="presentableId" value="Default" />
       <updated>1682091495184</updated>
       <workItem from="1682091497073" duration="6925000" />
-      <workItem from="1682102582778" duration="32000" />
-      <workItem from="1682102941610" duration="3523000" />
-      <workItem from="1682118750607" duration="1639000" />
-      <workItem from="1682176049773" duration="4486000" />
-      <workItem from="1682184648814" duration="4552000" />
-      <workItem from="1682204211142" duration="61000" />
-      <workItem from="1682210384216" duration="2277000" />
+      <workItem from="1682102582778" duration="24190000" />
+      <workItem from="1682215303057" duration="2979000" />
+      <workItem from="1682218706630" duration="18000" />
+      <workItem from="1682282179450" duration="578000" />
+      <workItem from="1682286464615" duration="2479000" />
     </task>
-    <task id="LOCAL-00001" summary="Updated int to Integer">
-      <created>1682103176235</created>
+    <task id="LOCAL-00001" summary="Created basic project structure and classes.">
+      <created>1682102722575</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1682103176237</updated>
+      <updated>1682102722575</updated>
     </task>
-    <task id="LOCAL-00002" summary="added servicer view">
-      <created>1682210815785</created>
+    <task id="LOCAL-00002" summary="Finished Half the View">
+      <created>1682110552717</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1682210815785</updated>
+      <updated>1682110552717</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Started db integration with sqllite.">
+      <created>1682118682673</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682118682673</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added sqlite file">
+      <created>1682119137482</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682119137482</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Finished up CLI and functionalities">
+      <created>1682184373837</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682184373837</updated>
+    </task>
+    <task id="LOCAL-00006" summary="db">
+      <created>1682184497951</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682184497951</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Finishing touches to UI">
+      <created>1682200110573</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682200110573</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Finishing touches to UI">
+      <created>1682200285458</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682200285458</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated int to Integer" />
-    <MESSAGE value="added servicer view" />
-    <option name="LAST_COMMIT_MESSAGE" value="added servicer view" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/Main.java</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="Created basic project structure and classes." />
+    <MESSAGE value="Finished Half the View" />
+    <MESSAGE value="Started db integration with sqllite." />
+    <MESSAGE value="added sqlite file" />
+    <MESSAGE value="Finished up CLI and functionalities" />
+    <MESSAGE value="db" />
+    <MESSAGE value="Finishing touches to UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing touches to UI" />
   </component>
 </project>

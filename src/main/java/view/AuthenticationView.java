@@ -9,6 +9,7 @@ import model.User;
 import java.util.Optional;
 import java.util.Scanner;
 
+//TODO: Check data type so that it doesn't error out, but not for this class the other classes
 public class AuthenticationView {
     private final Scanner keyboard = new Scanner(System.in);
     private final AuthenticationController authController = new AuthenticationController();

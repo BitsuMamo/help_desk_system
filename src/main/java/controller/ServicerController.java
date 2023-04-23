@@ -3,6 +3,7 @@ package controller;
 import dao.IDao;
 import dao.ServicerDao;
 import model.Servicer;
+import model.Ticket;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,6 +31,13 @@ public class ServicerController implements ICommon<Servicer> {
 
     @Override
     public Servicer delete(Integer id) {
+        TicketController ticketController = new TicketController();
+
+        List<Ticket> tickets = ticketController.getByServicer(id);
+        tickets.forEach(ticket -> ticketController.updateServicer(ticket.getId(), null));
+
         return servicerDao.delete(id);
     }
+
+
 }

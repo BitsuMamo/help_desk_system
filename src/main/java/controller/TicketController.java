@@ -7,6 +7,7 @@ import model.Ticket;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class TicketController implements ICommon<Ticket>{
     TicketDao ticketDao = new TicketDao();
@@ -47,4 +48,26 @@ public class TicketController implements ICommon<Ticket>{
         ticketDao.addServicer(id, servicer_id);
     }
 
+
+    public List<Ticket> getUnAssignedTicket() {
+        List<Ticket> tickets = getAll();
+
+        return tickets.stream()
+                .filter(ticket -> ticket.getServicer() == null)
+                .toList();
+    }
+
+    public List<Ticket> getFixedTicket(Integer id){
+
+        Stream<Ticket> custList = getByCustomer(id).stream().filter(Ticket::isFixed);
+        Stream<Ticket> servList = getByServicer(id).stream().filter(Ticket::isFixed);
+
+        return Stream.concat(custList, servList).toList();
+    }
+
+    public List<Ticket> showActiveTickets(Servicer servicer){
+        return getByServicer(servicer.getId()).stream()
+                .filter(ticket -> !ticket.isFixed())
+                .toList();
+    }
 }

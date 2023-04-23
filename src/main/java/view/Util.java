@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Util {
+
+    // These two functions are used for printing out table format
     public static String createSeparator(String sep, String start, String end, Integer size){
         return start +
                 String.valueOf(sep).repeat(Math.max(0, size - 1)) +
@@ -21,6 +23,8 @@ public class Util {
         return sb.toString();
     }
 
+
+    // Prints a list of Tickets
     public static void printTickets(List<Ticket> tickets){
         System.out.println(createSeparator("-", "+", "+", 240 + 6));
         System.out.printf(
@@ -29,15 +33,17 @@ public class Util {
         );
 
 
-        tickets.forEach((x) -> {
+        tickets.forEach((ticket) -> {
             System.out.println(createSeparatorInternal("-", "+", 40, 6));
-            System.out.println(x);
+            System.out.println(ticket);
         });
 
         System.out.println(createSeparator("-", "+", "+", 240 + 6));
 
+
     }
 
+    // Prints a list of Users
     public static void printUser(List<? extends User> users){
         System.out.println(createSeparator("-", "+", "+", 63));
         System.out.printf(
@@ -53,6 +59,7 @@ public class Util {
         System.out.println(createSeparator("-", "+", "+", 63));
     }
 
+    // Greetings for login
     public static void printGreeting(User user){
         System.out.println(Util.createSeparatorInternal("-", "+", 20, 3));
         System.out.printf("|%20s|%20s|%20s|%n","WELCOME" ,user.getUserType(), user.getName());
@@ -60,6 +67,7 @@ public class Util {
         System.out.println();
     }
 
+    // Take a varadd of strings to print as a menu
     public static void printMenu(String... menuItems){
         System.out.println("+-----+");
         System.out.println("|MENU |");
@@ -72,6 +80,7 @@ public class Util {
         System.out.printf("|%-5s|", ">");
     }
 
+    // Prints id input info and get the input and return it;
     public static int getId(Scanner keyboard, String type){
         System.out.println("+---------------------------------");
         System.out.printf("|%20s>    ","Enter "+ type +" ID: ");
