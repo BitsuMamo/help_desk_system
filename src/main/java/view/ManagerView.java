@@ -60,7 +60,7 @@ public class ManagerView {
         viewTickets();
         int ticket_id = Util.getId(keyboard, "Ticket");
 
-        ticketController.delete(ticket_id);
+        Util.printTickets(List.of(ticketController.delete(ticket_id)));
     }
 
     private void deleteServicer() {
@@ -70,7 +70,7 @@ public class ManagerView {
         List<Ticket> tickets = ticketController.getByServicer(servicer_id);
         tickets.forEach(ticket -> ticketController.updateServicer(ticket.getId(), null));
 
-        servicerController.delete(servicer_id);
+        Util.printUser(List.of(servicerController.delete(servicer_id)));
     }
 
     private void deleteCustomer() {
@@ -81,7 +81,7 @@ public class ManagerView {
         List<Ticket> tickets = ticketController.getByCustomer(customer_id);
         tickets.forEach(ticket -> ticketController.delete(ticket.getId()));
 
-        customerController.delete(customer_id);
+        Util.printUser(List.of(customerController.delete(customer_id)));
     }
 
     private void viewTicketByCustomer() {

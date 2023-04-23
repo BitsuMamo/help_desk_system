@@ -53,7 +53,7 @@ public class CustomerView {
         viewActiveTickets();
         int id;
         id = Util.getId(keyboard, "Ticket");
-        ticketController.delete(id);
+        Util.printTickets(List.of(ticketController.delete(id)));
     }
 
     private void viewActiveTickets() {

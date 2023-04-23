@@ -24,7 +24,7 @@ public class Util {
     public static void printTickets(List<Ticket> tickets){
         System.out.println(createSeparator("-", "+", "+", 240 + 6));
         System.out.printf(
-                "|%-40s|%40s|%40s|%40s|%40s|%40s|%n",
+                "|%40s|%40s|%-40s|%-40s|%-40s|%-40s|%n",
                 "ID", "Created At", "Title", "Desc", "Cust", "Servicer"
         );
 
@@ -41,7 +41,7 @@ public class Util {
     public static void printUser(List<? extends User> users){
         System.out.println(createSeparator("-", "+", "+", 63));
         System.out.printf(
-                "|%-20s|%20s|%20s|%n",
+                "|%20s|%-20s|%-20s|%n",
                 "ID", "Name", "Type"
         );
 
@@ -79,4 +79,5 @@ public class Util {
         System.out.println("+---------------------------------");
         return id;
     }
+
 }

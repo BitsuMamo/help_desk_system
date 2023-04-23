@@ -36,7 +36,7 @@ public class Ticket {
     @Override
     public String toString(){
         return String.format(
-                "|%-40d|%40s|%40s|%40s|%40s|%40s|",
+                "|%40d|%40s|%-40s|%-40s|%-40s|%-40s|",
                 id, createdAt, title, description, customer.getName(), servicer == null ? "" : servicer.getName()
         );
     }
