@@ -1,7 +1,6 @@
 package dao;
 
 import JDBC.ConnectManager;
-import model.Customer;
 import model.Servicer;
 
 import java.sql.Connection;

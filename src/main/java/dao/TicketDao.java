@@ -53,7 +53,7 @@ public class TicketDao implements IDao<Ticket>{
 
     @Override
     public Optional<Ticket> getById(Integer id) {
-        Ticket returnTicket = null;
+        Ticket returnTicket;
         String query = "SELECT * FROM Ticket WHERE id = ?";
         try(PreparedStatement statement = conn.prepareStatement(query)){
             statement.setInt(1, id);

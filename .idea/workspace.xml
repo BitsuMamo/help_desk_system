@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Refactored most classes to use the proper controller.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ICommon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ICommon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ServicerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ServicerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/IDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/IDao.java" afterDir="false" />
+    <list default="true" id="b0e69d01-fe91-4cee-988c-4c75b5cec85c" name="Changes" comment="Used optional correctly. Used optional to show error and success messages.">
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ManagerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ManagerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ServicerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ServicerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TicketDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ManagerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +194,7 @@
       <workItem from="1682215303057" duration="2979000" />
       <workItem from="1682218706630" duration="18000" />
       <workItem from="1682282179450" duration="578000" />
-      <workItem from="1682286464615" duration="4309000" />
+      <workItem from="1682286464615" duration="4662000" />
     </task>
     <task id="LOCAL-00001" summary="Created basic project structure and classes.">
       <created>1682102722575</created>
@@ -268,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682289068648</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Used optional correctly. Used optional to show error and success messages.">
+      <created>1682291985106</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682291985106</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +292,8 @@
     <MESSAGE value="db" />
     <MESSAGE value="Finishing touches to UI" />
     <MESSAGE value="Refactored most classes to use the proper controller." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored most classes to use the proper controller." />
+    <MESSAGE value="Used optional correctly. Used optional to show error and success messages." />
+    <option name="LAST_COMMIT_MESSAGE" value="Used optional correctly. Used optional to show error and success messages." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

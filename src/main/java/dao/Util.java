@@ -1,7 +1,5 @@
 package dao;
 
-import JDBC.ConnectManager;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

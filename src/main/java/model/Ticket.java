@@ -1,19 +1,24 @@
 package model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 import java.time.LocalDate;
 
 @Data
 public class Ticket {
 
+    @NonNull
     private Integer id;
+    @NonNull
     private LocalDate createdAt;
-    private String title, description;
+    @NonNull
+    private String title;
+    private String description;
+    @NonNull
     private Customer customer;
     private Servicer servicer;
+    @NonNull
     private boolean isFixed;
 
     public Ticket(Integer id, String title, String description, Customer customer, Servicer servicer, boolean isFixed) {

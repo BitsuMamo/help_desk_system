@@ -1,7 +1,6 @@
 package dao;
 
 import JDBC.ConnectManager;
-import model.Customer;
 import model.Manager;
 
 import java.sql.Connection;
@@ -13,7 +12,7 @@ import java.util.Optional;
 
 public class
 ManagerDao implements IDao<Manager>{
-    private Connection conn;
+    private final Connection conn;
 
     public ManagerDao(){
         conn = new ConnectManager().getConnection();
