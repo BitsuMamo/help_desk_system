@@ -30,7 +30,7 @@ public class ServicerController implements ICommon<Servicer> {
     }
 
     @Override
-    public Servicer delete(Integer id) {
+    public Optional<Servicer> delete(Integer id) {
         TicketController ticketController = new TicketController();
 
         List<Ticket> tickets = ticketController.getByServicer(id);

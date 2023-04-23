@@ -93,8 +93,12 @@ public class CustomerDao implements IDao<Customer>{
     }
 
     @Override
-    public Customer delete(Integer id) {
-        Customer customer = getById(id).orElse(null);
+    public Optional<Customer> delete(Integer id) {
+        Optional<Customer> customer = getById(id);
+        if(customer.isEmpty()){
+            return Optional.empty();
+        }
+
         String query = "DELETE FROM User WHERE id = ?";
 
 

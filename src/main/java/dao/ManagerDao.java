@@ -71,8 +71,11 @@ ManagerDao implements IDao<Manager>{
     }
 
     @Override
-    public Manager delete(Integer id) {
-        Manager manager = getById(id).orElse(null);
+    public Optional<Manager> delete(Integer id) {
+        Optional<Manager> manager = getById(id);
+        if(manager.isEmpty()){
+            return Optional.empty();
+        }
 
         String query = "DELETE FROM User WHERE id = ?";
 

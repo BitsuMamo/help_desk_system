@@ -25,7 +25,7 @@ public class ManagerController implements ICommon<Manager> {
     }
 
     @Override
-    public Manager delete(Integer id) {
+    public Optional<Manager> delete(Integer id) {
         return managerDao.delete(id);
     }
 }

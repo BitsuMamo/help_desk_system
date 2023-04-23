@@ -27,7 +27,7 @@ public class CustomerController implements ICommon<Customer> {
     }
 
     @Override
-    public Customer delete(Integer id) {
+    public Optional<Customer> delete(Integer id) {
         TicketController ticketController = new TicketController();
         List<Ticket> tickets = ticketController.getByCustomer(id);
         tickets.forEach(ticket -> ticketController.delete(ticket.getId()));
